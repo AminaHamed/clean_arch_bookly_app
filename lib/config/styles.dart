@@ -19,12 +19,10 @@ abstract class Styles {
     letterSpacing: 1.2,
   );
   static final textStyle14 = TextStyle(
-      fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.grey);
+      fontSize: 14, fontWeight: FontWeight.normal, color: AppColors.green);
 
   static const textStyle16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
   );
 }
-
-const TextStyle textStyle = TextStyle();

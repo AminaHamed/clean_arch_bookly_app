@@ -5,15 +5,16 @@ import 'package:clean_arch_bookly_app/core/widgets/space_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../config/styles.dart';
-import '../../../../core/utils/constants.dart';
-import 'book_rating.dart';
+import '../../config/styles.dart';
+import '../../features/home/presentation/widgets/book_rating.dart';
+import '../utils/constants.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({Key? key}) : super(key: key);
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return GestureDetector(
       onTap: () {
         GoRouter.of(context).push(AppRouter.bookDetailsView);
@@ -54,9 +55,12 @@ class BestSellerListViewItem extends StatelessWidget {
                 const SizedBox(
                   height: 3,
                 ),
-                Text(
-                  'J.K. Rowling',
-                  style: Styles.textStyle14,
+                Opacity(
+                  opacity: .6,
+                  child: Text(
+                    'J.K. Rowling',
+                    style: Styles.textStyle14.copyWith(color: Colors.white),
+                  ),
                 ),
                 const SizedBox(
                   height: 3,

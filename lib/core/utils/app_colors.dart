@@ -15,5 +15,6 @@ class HexColor extends Color {
 class AppColors {
   static final Color kPrimaryColor = HexColor("#100B20");
   static final Color yellow = HexColor("#FFDD4F");
-  static final Color grey = HexColor("#707070");
+  static final Color green = HexColor("#70ffff");
+  static final Color orange = HexColor("#EF8262");
 }
