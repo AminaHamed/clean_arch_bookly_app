@@ -1,10 +1,10 @@
-import 'package:clean_arch_bookly_app/config/size_configuration.dart';
 import 'package:clean_arch_bookly_app/core/utils/app_assets.dart';
 import 'package:clean_arch_bookly_app/core/widgets/space_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../config/routers.dart';
+import '../../../../../core/config/routers.dart';
+import '../../../../../core/config/size_configuration.dart';
 import 'sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {

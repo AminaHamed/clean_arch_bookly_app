@@ -1,9 +1,10 @@
-import 'package:clean_arch_bookly_app/config/routers.dart';
-import 'package:clean_arch_bookly_app/config/size_configuration.dart';
 import 'package:clean_arch_bookly_app/core/utils/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../../../core/config/routers.dart';
+import '../../../../core/config/size_configuration.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({Key? key}) : super(key: key);

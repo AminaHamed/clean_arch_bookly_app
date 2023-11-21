@@ -1,5 +1,6 @@
-import 'package:clean_arch_bookly_app/config/size_configuration.dart';
 import 'package:flutter/material.dart';
+
+import '../config/size_configuration.dart';
 
 class HorizontalSpace extends StatelessWidget {
   const HorizontalSpace(this.value, {super.key});

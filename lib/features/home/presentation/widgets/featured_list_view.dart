@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../config/size_configuration.dart';
+import '../../../../core/config/size_configuration.dart';
 import 'custom_book_image.dart';
 
 class FeaturedListView extends StatelessWidget {

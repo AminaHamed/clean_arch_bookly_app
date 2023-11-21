@@ -1,6 +1,6 @@
-import 'package:clean_arch_bookly_app/config/size_configuration.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/config/size_configuration.dart';
 import 'custom_book_image.dart';
 
 class SimilarBooksListview extends StatelessWidget {

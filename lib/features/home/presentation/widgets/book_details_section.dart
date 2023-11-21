@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../config/size_configuration.dart';
-import '../../../../config/styles.dart';
+import '../../../../core/config/size_configuration.dart';
+import '../../../../core/config/styles.dart';
 import '../../../../core/utils/app_strings.dart';
 import '../../../../core/widgets/space_widget.dart';
 import 'book_actions.dart';

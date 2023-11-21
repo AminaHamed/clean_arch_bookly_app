@@ -1,9 +1,9 @@
-import 'package:clean_arch_bookly_app/config/styles.dart';
 import 'package:clean_arch_bookly_app/core/utils/app_strings.dart';
 import 'package:clean_arch_bookly_app/core/widgets/space_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../config/size_configuration.dart';
+import '../../../../core/config/size_configuration.dart';
+import '../../../../core/config/styles.dart';
 import 'best_seller_list_view.dart';
 import 'custom_app_bar.dart';
 import 'featured_list_view.dart';

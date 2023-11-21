@@ -2,7 +2,7 @@ import 'package:clean_arch_bookly_app/core/utils/app_strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../config/styles.dart';
+import '../../../../../core/config/styles.dart';
 import '../../../../../core/widgets/book_list_view_item.dart';
 import 'custom_search_text_field.dart';
 

@@ -1,12 +1,12 @@
-import 'package:clean_arch_bookly_app/config/routers.dart';
-import 'package:clean_arch_bookly_app/config/size_configuration.dart';
 import 'package:clean_arch_bookly_app/core/utils/app_assets.dart';
 import 'package:clean_arch_bookly_app/core/widgets/space_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../config/styles.dart';
 import '../../features/home/presentation/widgets/book_rating.dart';
+import '../config/routers.dart';
+import '../config/size_configuration.dart';
+import '../config/styles.dart';
 import '../utils/constants.dart';
 
 class BookListViewItem extends StatelessWidget {

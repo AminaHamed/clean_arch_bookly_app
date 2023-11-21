@@ -1,7 +1,7 @@
 import 'package:clean_arch_bookly_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import '../core/utils/constants.dart';
+import '../utils/constants.dart';
 
 abstract class Styles {
   static const textStyle18 = TextStyle(
