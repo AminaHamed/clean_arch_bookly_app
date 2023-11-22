@@ -1,7 +1,7 @@
 class AppStrings {
   static const String imgPath = 'assets/images';
   static const String splashText = 'Read Free Books';
-  static const String bestSeller = 'Best Seller';
+  static const String newestBooks = 'Newest Books';
   static const String bookName = 'The Jungle Book';
   static const String bookWriter = 'Rudyard Kipling';
   static const String youMayLike = 'You can also like';

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/config/size_configuration.dart';
 import '../../../../core/config/styles.dart';
-import 'best_seller_list_view.dart';
 import 'custom_app_bar.dart';
-import 'featured_list_view_bloc_consumer.dart';
+import 'featured_books/featured_list_view_bloc_consumer.dart';
+import 'newest_books/newest_books_list_view_bloc_builder.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),
               child: Text(
-                AppStrings.bestSeller,
+                AppStrings.newestBooks,
                 style: Styles.textStyle18,
               ),
             ),
@@ -41,7 +41,7 @@ class HomeViewBody extends StatelessWidget {
         SliverFillRemaining(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
-            child: BestSellerListView(),
+            child: NewestBoosListViewBlocBuilder(),
           ),
         )
       ],

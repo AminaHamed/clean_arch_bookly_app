@@ -1,7 +1,7 @@
 import 'package:clean_arch_bookly_app/core/widgets/custom_fading_widget.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../../../../core/config/size_configuration.dart';
+import '../../../../../core/config/size_configuration.dart';
 import 'custom_book_image_loading_indicator.dart';
 
 class FeaturedListViewLoadingIndicator extends StatelessWidget {

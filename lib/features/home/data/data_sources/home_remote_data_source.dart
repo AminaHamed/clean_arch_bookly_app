@@ -4,7 +4,7 @@ import 'package:clean_arch_bookly_app/core/utils/constants.dart';
 import 'package:clean_arch_bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:clean_arch_bookly_app/features/home/domain/entities/book_entity.dart';
 
-import '../../../../core/utils/functions/save_books_data.dart';
+import '../../../../core/utils/functions/cache_data.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks({int pageNumber = 0});

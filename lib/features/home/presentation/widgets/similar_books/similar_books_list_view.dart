@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/config/size_configuration.dart';
-import 'custom_book_image.dart';
+import '../../../../../core/config/size_configuration.dart';
+import '../custom_book_image.dart';
 
 class SimilarBooksListview extends StatelessWidget {
   const SimilarBooksListview({super.key});

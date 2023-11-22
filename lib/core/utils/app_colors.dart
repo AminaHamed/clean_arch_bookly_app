@@ -17,4 +17,5 @@ class AppColors {
   static final Color yellow = HexColor("#FFDD4F");
   static final Color green = HexColor("#70ffff");
   static final Color orange = HexColor("#EF8262");
+  static const Color fading = Colors.white24;
 }

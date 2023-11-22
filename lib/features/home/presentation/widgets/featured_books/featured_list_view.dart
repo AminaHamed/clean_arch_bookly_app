@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../core/config/size_configuration.dart';
-import '../../domain/entities/book_entity.dart';
-import '../manager/featured_books_cubit/featured_books_cubit.dart';
-import 'custom_book_image.dart';
+import '../../../../../core/config/routers.dart';
+import '../../../../../core/config/size_configuration.dart';
+import '../../../domain/entities/book_entity.dart';
+import '../../manager/featured_books_cubit/featured_books_cubit.dart';
+import '../custom_book_image.dart';
 
 class FeaturedListView extends StatefulWidget {
   const FeaturedListView({Key? key, required this.books}) : super(key: key);
@@ -57,9 +59,15 @@ class _FeaturedListViewState extends State<FeaturedListView> {
           scrollDirection: Axis.horizontal,
           itemBuilder: (_, index) => Padding(
             padding: const EdgeInsets.only(left: 20, top: 10),
-            child: CustomBookImage(
-              imageUlr: widget.books[index].image ??
-                  'https://example.com/placeholder.jpg',
+            child: GestureDetector(
+              // TODO handel arguments
+              onTap: () {
+                GoRouter.of(context).push(AppRouter.bookDetailsView);
+              },
+              child: CustomBookImage(
+                imageUlr: widget.books[index].image ??
+                    'https://example.com/placeholder.jpg',
+              ),
             ),
           ),
         ),
