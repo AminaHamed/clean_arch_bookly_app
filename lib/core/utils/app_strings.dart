@@ -7,4 +7,5 @@ class AppStrings {
   static const String youMayLike = 'You can also like';
   static const String searchResult = 'Search Result';
   static const String search = 'Search';
+  static const String booksPaginationFailure = 'Books Pagination Failure';
 }

@@ -6,7 +6,7 @@ import '../../../../core/config/size_configuration.dart';
 import '../../../../core/config/styles.dart';
 import 'best_seller_list_view.dart';
 import 'custom_app_bar.dart';
-import 'featured_list_view.dart';
+import 'featured_list_view_bloc_consumer.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({Key? key}) : super(key: key);
@@ -24,7 +24,8 @@ class HomeViewBody extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: CustomAppBar(),
             ),
-            FeaturedListView(),
+            // FeaturedListView(),
+            FeaturedListViewBlocConsumer(),
             VerticalSpace(4.5),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30),

@@ -17,7 +17,7 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         SizedBox(
             height: SizeConfig.screenHeight! * .3,
-            child: const CustomBookImage()),
+            child: CustomBookImage(imageUlr: "")),
         const VerticalSpace(4),
         Text(
           AppStrings.bookName,
