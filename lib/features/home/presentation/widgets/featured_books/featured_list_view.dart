@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../../../../core/config/routers.dart';
+import '../../../../../core/config/routes.dart';
 import '../../../../../core/config/size_configuration.dart';
 import '../../../domain/entities/book_entity.dart';
 import '../../manager/featured_books_cubit/featured_books_cubit.dart';
@@ -62,7 +61,9 @@ class _FeaturedListViewState extends State<FeaturedListView> {
             child: GestureDetector(
               // TODO handel arguments
               onTap: () {
-                GoRouter.of(context).push(AppRouter.bookDetailsView);
+                Navigator.pushNamed(context, Routes.detailsPageRoute,
+                    arguments: widget.books[index]);
+                // GoRouter.of(context).push(AppRouter.bookDetailsView);
               },
               child: CustomBookImage(
                 imageUlr: widget.books[index].image ??

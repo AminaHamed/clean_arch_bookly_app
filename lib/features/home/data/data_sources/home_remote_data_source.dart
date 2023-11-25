@@ -1,10 +1,10 @@
 import 'package:clean_arch_bookly_app/core/api/api_service.dart';
 import 'package:clean_arch_bookly_app/core/api/end_points.dart';
 import 'package:clean_arch_bookly_app/core/utils/constants.dart';
-import 'package:clean_arch_bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:clean_arch_bookly_app/features/home/domain/entities/book_entity.dart';
 
 import '../../../../core/utils/functions/cache_data.dart';
+import '../../../../core/utils/functions/map_books_list.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks({int pageNumber = 0});
@@ -21,7 +21,7 @@ class HomeRemoteDataSourceDioImpl implements HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks({int pageNumber = 0}) async {
     Map<String, dynamic> data = await apiService.get(
         endPoint: "${EndPoints.freeProgramingBooks}${pageNumber * 10}");
-    List<BookEntity> books = getBooksList(data);
+    List<BookEntity> books = mapBooksList(data);
     saveBooksData(books, kFeaturedBox);
     return books;
   }
@@ -30,16 +30,8 @@ class HomeRemoteDataSourceDioImpl implements HomeRemoteDataSource {
   Future<List<BookEntity>> fetchNewestBooks() async {
     Map<String, dynamic> data =
         await apiService.get(endPoint: EndPoints.newestProgramingBooks);
-    List<BookEntity> books = getBooksList(data);
+    List<BookEntity> books = mapBooksList(data);
     saveBooksData(books, kNewestBox);
-    return books;
-  }
-
-  List<BookEntity> getBooksList(Map<String, dynamic> data) {
-    List<BookEntity> books = [];
-    for (var bookItem in data['items']) {
-      books.add(BookModel.fromJson(bookItem));
-    }
     return books;
   }
 }

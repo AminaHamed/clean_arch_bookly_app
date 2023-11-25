@@ -7,8 +7,7 @@ import '../../../../core/config/styles.dart';
 class BookRating extends StatelessWidget {
   const BookRating({
     super.key,
-    this.mainAxisAlignment = MainAxisAlignment.start,
-  });
+    this.mainAxisAlignment = MainAxisAlignment.start});
 
   final MainAxisAlignment mainAxisAlignment;
 
@@ -26,7 +25,7 @@ class BookRating extends StatelessWidget {
           width: 6.3,
         ),
         const Text(
-          '4.8',
+          '2.3',
           style: Styles.textStyle16,
         ),
         const SizedBox(

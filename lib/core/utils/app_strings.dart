@@ -8,4 +8,5 @@ class AppStrings {
   static const String searchResult = 'Search Result';
   static const String search = 'Search';
   static const String booksPaginationFailure = 'Books Pagination Failure';
+  static const String noRouteFound = 'No Route Found';
 }

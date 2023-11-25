@@ -1,10 +1,10 @@
+import 'package:clean_arch_bookly_app/core/config/routes.dart';
 import 'package:clean_arch_bookly_app/core/utils/simple_bloc_observer.dart';
 import 'package:clean_arch_bookly_app/features/home/domain/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 
-import 'core/config/routers.dart';
 import 'core/config/theme.dart';
 import 'core/utils/constants.dart';
 import 'core/utils/functions/setup_service_locator.dart';
@@ -24,10 +24,10 @@ class BooklyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: AppRouter.router,
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: myTheme(),
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }

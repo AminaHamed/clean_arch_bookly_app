@@ -1,34 +1,53 @@
 import 'package:clean_arch_bookly_app/core/utils/app_strings.dart';
+import 'package:clean_arch_bookly_app/features/search/presentation/manager/search_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/config/styles.dart';
-import '../../../../../core/widgets/book_list_view_item.dart';
 import 'custom_search_text_field.dart';
+import 'search_result_list_view_bloc_builder.dart';
 
-class SearchViewBody extends StatelessWidget {
+class SearchViewBody extends StatefulWidget {
   const SearchViewBody({super.key});
 
   @override
+  State<SearchViewBody> createState() => _SearchViewBodyState();
+}
+
+class _SearchViewBodyState extends State<SearchViewBody> {
+  String searchText = '';
+
+  @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomSearchTextField(),
-          SizedBox(
+          CustomSearchTextField(
+            onTextChanged: (text) {
+              setState(() {
+                searchText = text;
+              });
+            },
+            onSearchPressed: () async {
+              await BlocProvider.of<SearchCubit>(context)
+                  .search(searchText.trim().toString());
+            },
+          ),
+          const SizedBox(
             height: 16,
           ),
-          Text(
+          const Text(
             AppStrings.searchResult,
             style: Styles.textStyle18,
           ),
-          SizedBox(
-            height: 16,
-          ),
           Expanded(
-            child: SearchResultListView(),
+            child: SearchResultListViewBlocBuilder(),
+          ),
+          const SizedBox(
+            height: 16,
           ),
         ],
       ),
@@ -36,20 +55,4 @@ class SearchViewBody extends StatelessWidget {
   }
 }
 
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: BookListViewItem(),
-        );
-      },
-    );
-  }
-}

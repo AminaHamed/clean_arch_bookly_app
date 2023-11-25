@@ -1,8 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../../../../core/config/routers.dart';
+import '../../../../../core/config/routes.dart';
 import '../../../../../core/config/size_configuration.dart';
 import '../../../../../core/config/styles.dart';
 import '../../../../../core/utils/constants.dart';
@@ -20,7 +19,8 @@ class NewestBooksListViewItem extends StatelessWidget {
     SizeConfig().init(context);
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.bookDetailsView);
+        Navigator.pushNamed(context, Routes.detailsPageRoute, arguments: book);
+        // GoRouter.of(context).push(AppRouter.bookDetailsView);
       },
       child: Row(
         children: [
