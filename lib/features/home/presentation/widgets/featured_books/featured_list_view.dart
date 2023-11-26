@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/config/routes.dart';
 import '../../../../../core/config/size_configuration.dart';
+import '../../../../../core/utils/constants.dart';
 import '../../../domain/entities/book_entity.dart';
 import '../../manager/featured_books_cubit/featured_books_cubit.dart';
 import '../custom_book_image.dart';
@@ -53,25 +54,23 @@ class _FeaturedListViewState extends State<FeaturedListView> {
           return false;
         },
         child: ListView.builder(
-          controller: _scrollController,
-          itemCount: widget.books.length,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (_, index) => Padding(
-            padding: const EdgeInsets.only(left: 20, top: 10),
-            child: GestureDetector(
-              // TODO handel arguments
-              onTap: () {
-                Navigator.pushNamed(context, Routes.detailsPageRoute,
-                    arguments: widget.books[index]);
-                // GoRouter.of(context).push(AppRouter.bookDetailsView);
-              },
-              child: CustomBookImage(
-                imageUlr: widget.books[index].image ??
-                    'https://example.com/placeholder.jpg',
-              ),
-            ),
-          ),
-        ),
+            controller: _scrollController,
+            itemCount: widget.books.length,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (_, index) {
+              return Padding(
+                padding: const EdgeInsets.only(left: 20, top: 10),
+                child: GestureDetector(
+                  onTap: () {
+                    sharedBook = widget.books[index];
+                    Navigator.pushNamed(context, Routes.detailsPageRoute);
+                  },
+                  child: CustomBookImage(
+                    imageUlr: widget.books[index].image ?? '',
+                  ),
+                ),
+              );
+            }),
       ),
     );
   }

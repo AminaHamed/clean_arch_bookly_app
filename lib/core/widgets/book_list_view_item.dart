@@ -18,8 +18,8 @@ class BookListViewItem extends StatelessWidget {
     SizeConfig().init(context);
     return GestureDetector(
       onTap: () {
+        sharedBook = book;
         Navigator.pushNamed(context, Routes.detailsPageRoute);
-        // GoRouter.of(context).push(AppRouter.bookDetailsView);
       },
       child: Row(
         children: [

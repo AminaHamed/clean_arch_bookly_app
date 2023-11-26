@@ -1,10 +1,10 @@
 import 'package:clean_arch_bookly_app/core/widgets/space_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/config/size_configuration.dart';
+import '../../../../../core/config/size_configuration.dart';
+import '../similar_books/similar_books_section.dart';
 import 'book_details_section.dart';
 import 'custom_book_details_app_bar.dart';
-import 'similar_books/similar_books_section.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({Key? key}) : super(key: key);

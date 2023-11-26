@@ -11,12 +11,13 @@ class NewestBooksListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       physics: const NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.zero,
-      itemCount: books.length,
-      itemBuilder: (_, index) => Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: NewestBooksListViewItem(book: books[index]),
-      ),
-    );
+        padding: EdgeInsets.zero,
+        itemCount: books.length,
+        itemBuilder: (_, index) {
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: NewestBooksListViewItem(book: books[index]),
+          );
+        });
   }
 }

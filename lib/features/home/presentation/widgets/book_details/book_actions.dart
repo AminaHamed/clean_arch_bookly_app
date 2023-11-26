@@ -1,7 +1,7 @@
 import 'package:clean_arch_bookly_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/widgets/custom_buttons.dart';
+import '../../../../../core/widgets/custom_buttons.dart';
 
 class BookActions extends StatelessWidget {
   const BookActions({Key? key}) : super(key: key);

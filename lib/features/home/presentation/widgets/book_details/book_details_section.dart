@@ -1,12 +1,12 @@
+import 'package:clean_arch_bookly_app/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/config/size_configuration.dart';
-import '../../../../core/config/styles.dart';
-import '../../../../core/utils/app_strings.dart';
-import '../../../../core/widgets/space_widget.dart';
+import '../../../../../core/config/size_configuration.dart';
+import '../../../../../core/config/styles.dart';
+import '../../../../../core/widgets/space_widget.dart';
+import '../book_rating.dart';
+import '../custom_book_image.dart';
 import 'book_actions.dart';
-import 'book_rating.dart';
-import 'custom_book_image.dart';
 
 class BookDetailsSection extends StatelessWidget {
   const BookDetailsSection({Key? key}) : super(key: key);
@@ -17,10 +17,10 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         SizedBox(
             height: SizeConfig.screenHeight! * .3,
-            child: const CustomBookImage(imageUlr: "")),
+            child: CustomBookImage(imageUlr: sharedBook?.image ?? '')),
         const VerticalSpace(4),
         Text(
-          AppStrings.bookName,
+          sharedBook?.title ?? '',
           style: Styles.textStyle30.copyWith(
             fontWeight: FontWeight.w400,
           ),
@@ -31,7 +31,7 @@ class BookDetailsSection extends StatelessWidget {
         Opacity(
           opacity: .6,
           child: Text(
-            AppStrings.bookWriter,
+            sharedBook?.authorName ?? '',
             style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,
