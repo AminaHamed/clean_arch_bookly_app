@@ -20,6 +20,7 @@ class BookDetailsSection extends StatelessWidget {
             child: CustomBookImage(imageUlr: sharedBook?.image ?? '')),
         const VerticalSpace(4),
         Text(
+          textAlign: TextAlign.center,
           sharedBook?.title ?? '',
           style: Styles.textStyle30.copyWith(
             fontWeight: FontWeight.w400,
@@ -43,7 +44,7 @@ class BookDetailsSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const VerticalSpace(4),
-        const BookActions(),
+        BookActions(),
       ],
     );
   }

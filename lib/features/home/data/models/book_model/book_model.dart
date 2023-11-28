@@ -24,6 +24,9 @@ class BookModel extends BookEntity {
     this.accessInfo,
     this.searchInfo,
   }) : super(
+            link: volumeInfo?.infoLink ?? '',
+            description: volumeInfo?.description ??
+                'No Description Provided for This Book (´•︵•`).',
             image: volumeInfo?.imageLinks?.thumbnail ??
                 'https://th.bing.com/th/id/R.f6f5e619ca9e1c46c2be6d0453bd47f2?rik=foj3EA0%2fytqHcQ&pid=ImgRaw&r=0',
             title: volumeInfo?.title ?? '',

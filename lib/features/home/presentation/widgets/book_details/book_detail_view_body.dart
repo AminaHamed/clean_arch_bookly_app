@@ -1,8 +1,8 @@
+import 'package:clean_arch_bookly_app/core/utils/constants.dart';
 import 'package:clean_arch_bookly_app/core/widgets/space_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/config/size_configuration.dart';
-import '../similar_books/similar_books_section.dart';
 import 'book_details_section.dart';
 import 'custom_book_details_app_bar.dart';
 
@@ -12,26 +12,22 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: CustomScrollView(
         slivers: [
-          SliverFillRemaining(
-            hasScrollBody: false,
+          const SliverToBoxAdapter(
             child: Column(
               children: [
                 CustomBookDetailsAppBar(),
                 BookDetailsSection(),
-                Expanded(
-                  child: VerticalSpace(4),
-                ),
-                SimilarBooksSection(),
-                SizedBox(
-                  height: 40,
-                ),
+                VerticalSpace(4),
               ],
             ),
-          )
+          ),
+          SliverToBoxAdapter(
+            child: Center(child: Text(sharedBook?.description ?? '')),
+          ),
         ],
       ),
     );
