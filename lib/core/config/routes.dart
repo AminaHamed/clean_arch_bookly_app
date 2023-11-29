@@ -1,3 +1,4 @@
+import 'package:clean_arch_bookly_app/features/home/presentation/manager/launch_url_cubit/launch_url_cubit.dart';
 import 'package:clean_arch_bookly_app/features/home/presentation/views/book_details_view.dart';
 import 'package:clean_arch_bookly_app/features/search/domain/use_cases/search_use_case.dart';
 import 'package:clean_arch_bookly_app/features/search/presentation/manager/search_cubit.dart';
@@ -6,9 +7,11 @@ import 'package:clean_arch_bookly_app/features/splash/presentation/views/splash_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../features/home/data/repositories/details_repo_impl.dart';
 import '../../features/home/data/repositories/home_repo_impl.dart';
 import '../../features/home/domain/use_cases/fetch_featured_books_use_case.dart';
 import '../../features/home/domain/use_cases/fetch_newest_books_use_case.dart';
+import '../../features/home/domain/use_cases/launch_book_url_use_case.dart';
 import '../../features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import '../../features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import '../../features/home/presentation/views/home_view.dart';
@@ -36,9 +39,9 @@ class AppRoutes {
           return MultiBlocProvider(providers: [
             BlocProvider(
                 create: (context) => FeaturedBooksCubit(
-                      FetchFeaturedBooksUseCase(
-                          homeRepo: getIt.get<HomeRepoImpl>()),
-                    )..fetchFeaturedBooks()),
+                  FetchFeaturedBooksUseCase(
+                      homeRepo: getIt.get<HomeRepoImpl>()),
+                )..fetchFeaturedBooks()),
             BlocProvider(
               create: (context) => NewestBooksCubit(
                 FetchNewestBooksUseCase(homeRepo: getIt.get<HomeRepoImpl>()),
@@ -49,8 +52,15 @@ class AppRoutes {
 
       case Routes.detailsPageRoute:
         return MaterialPageRoute(builder: (context) {
-          return const BookDetailsView();
+          return BlocProvider(
+            create: (context) =>
+                LaunchUrlCubit(launchBookUrlUseCase: LaunchBookUrlUseCase(
+                  detailsRepo: getIt.get<DetailRepoImpl>(),
+                )),
+            child: const BookDetailsView(),
+          );
         });
+
       case Routes.searchPageRoute:
         return MaterialPageRoute(builder: ((context) {
           return BlocProvider(
@@ -67,9 +77,9 @@ class AppRoutes {
   static Route<dynamic> undefinedRoute() {
     return MaterialPageRoute(
         builder: ((context) => const Scaffold(
-              body: Center(
-                child: Text(AppStrings.noRouteFound),
-              ),
-            )));
+          body: Center(
+            child: Text(AppStrings.noRouteFound),
+          ),
+        )));
   }
 }

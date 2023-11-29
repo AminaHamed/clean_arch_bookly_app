@@ -1,15 +1,17 @@
 import 'package:clean_arch_bookly_app/core/utils/app_colors.dart';
 import 'package:clean_arch_bookly_app/core/utils/constants.dart';
+import 'package:clean_arch_bookly_app/features/home/presentation/manager/launch_url_cubit/launch_url_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/widgets/custom_buttons.dart';
 
 class BookActions extends StatelessWidget {
-  BookActions({Key? key}) : super(key: key);
+  const BookActions({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final cubit = context.read<LaunchUrlCubit>();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Row(
@@ -17,40 +19,30 @@ class BookActions extends StatelessWidget {
           Expanded(
               child: CustomButton(
             onPressed: () {
-              _launchUrl();
+              cubit.launchUrl(sharedBook!.link ?? '');
             },
             text: "${sharedBook?.price ?? 0.0}",
             textColor: Colors.black,
-            backgroundColor: Colors.white,
-            borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(16), bottomLeft: Radius.circular(16)),
-          )),
+                backgroundColor: Colors.white,
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(16), bottomLeft: Radius.circular(16)),
+              )),
           Expanded(
               child: CustomButton(
-            onPressed: () {
-              _launchUrl();
+                onPressed: () {
+                  cubit.launchUrl(sharedBook!.link ?? '');
             },
-            text: 'Free Preview',
-            textColor: Colors.white,
-            backgroundColor: AppColors.orange,
-            fontSize: 16,
-            borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(16),
-                bottomRight: Radius.circular(16)),
-          )),
+                text: 'Free Preview',
+                textColor: Colors.white,
+                backgroundColor: AppColors.orange,
+                fontSize: 16,
+                borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(16),
+                    bottomRight: Radius.circular(16)),
+              )),
         ],
       ),
     );
   }
 
-  //TODo handel url data layers
-  final Uri _url = Uri.parse(sharedBook?.link ?? '');
-
-  Future<void> _launchUrl() async {
-    if (await canLaunchUrl(_url)) {
-      await launchUrl(_url);
-    } else {
-      throw 'Could not launch $sharedBook?.link??' '';
-    }
-  }
 }

@@ -52,3 +52,7 @@ class CacheFailure extends Failure {
 class NetworkFailure extends Failure {
   NetworkFailure(super.msg);
 }
+
+class LaunchUrlFailure extends Failure {
+  LaunchUrlFailure(super.msg);
+}

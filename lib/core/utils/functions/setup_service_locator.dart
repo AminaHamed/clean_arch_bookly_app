@@ -1,4 +1,6 @@
 import 'package:clean_arch_bookly_app/core/network/network_info.dart';
+import 'package:clean_arch_bookly_app/features/home/data/data_sources/details_remote_data_source.dart';
+import 'package:clean_arch_bookly_app/features/home/data/repositories/details_repo_impl.dart';
 import 'package:clean_arch_bookly_app/features/search/data/data_sources/search_remote_data_source.dart';
 import 'package:clean_arch_bookly_app/features/search/data/repositories/search_repo_impl.dart';
 import 'package:dio/dio.dart';
@@ -33,4 +35,7 @@ void setupServiceLocator() {
         searchRemoteDataSource:
             SearchRemoteDataSourceImpl(apiService: getIt.get<ApiService>())),
   );
+
+  getIt.registerSingleton<DetailRepoImpl>(
+      DetailRepoImpl(detailsRemoteDataSource: DetailsRemoteDataSourceImpl()));
 }
