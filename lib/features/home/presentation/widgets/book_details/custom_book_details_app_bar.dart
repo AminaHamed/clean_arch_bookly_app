@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/language.dart';
+
 class CustomBookDetailsAppBar extends StatelessWidget {
   const CustomBookDetailsAppBar({Key? key}) : super(key: key);
 
@@ -14,8 +16,12 @@ class CustomBookDetailsAppBar extends StatelessWidget {
             },
             icon: const Icon(Icons.close)),
         IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.add_shopping_cart_outlined)),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const SettingsPage();
+              }));
+            },
+            icon: const Icon(Icons.language)),
       ],
     );
   }
