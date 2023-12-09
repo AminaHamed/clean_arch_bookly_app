@@ -1,3 +1,4 @@
+import 'package:clean_arch_bookly_app/core/translation_helper/app_localizations.dart';
 import 'package:clean_arch_bookly_app/features/home/presentation/manager/launch_url_cubit/launch_url_cubit.dart';
 import 'package:clean_arch_bookly_app/features/home/presentation/views/book_details_view.dart';
 import 'package:clean_arch_bookly_app/features/search/domain/use_cases/search_use_case.dart';
@@ -16,7 +17,6 @@ import '../../features/home/presentation/manager/featured_books_cubit/featured_b
 import '../../features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/search/data/repositories/search_repo_impl.dart';
-import '../utils/app_strings.dart';
 import '../utils/functions/setup_service_locator.dart';
 
 abstract class Routes {
@@ -76,10 +76,10 @@ class AppRoutes {
 
   static Route<dynamic> undefinedRoute() {
     return MaterialPageRoute(
-        builder: ((context) => const Scaffold(
-          body: Center(
-            child: Text(AppStrings.noRouteFound),
-          ),
-        )));
+        builder: ((context) => Scaffold(
+              body: Center(
+                child: Text("noRouteFound".tr(context)),
+              ),
+            )));
   }
 }

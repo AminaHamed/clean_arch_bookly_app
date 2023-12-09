@@ -1,5 +1,16 @@
 {
-  "title": "My Flutter App",
-  "welcome_message": "Welcome to my app!",
-  "settings": "الاعدادات"
+  "settings": "Settings",
+  "splashText": "Read Free Books",
+  "newestBooks": "Newest Books",
+  "bookName": "The Jungle Book",
+  "bookWriter": "Rudyard Kipling",
+  "youMayLike": "You can also like",
+  "searchResult": "Search Result",
+  "search": "Search",
+  "booksPaginationFailure": "Books Pagination Failure",
+  "noRouteFound": "No Route Found",
+  "Free Preview": "Free Preview",
+  "ar": "Arabic",
+  "en": "English",
+  "current language": "This is the current language"
 }

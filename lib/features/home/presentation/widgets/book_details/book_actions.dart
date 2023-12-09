@@ -1,3 +1,4 @@
+import 'package:clean_arch_bookly_app/core/translation_helper/app_localizations.dart';
 import 'package:clean_arch_bookly_app/core/utils/app_colors.dart';
 import 'package:clean_arch_bookly_app/core/utils/constants.dart';
 import 'package:clean_arch_bookly_app/features/home/presentation/manager/launch_url_cubit/launch_url_cubit.dart';
@@ -31,17 +32,17 @@ class BookActions extends StatelessWidget {
                       backgroundColor: Colors.white,
                       borderRadius: lang == 'en'
                           ? const BorderRadius.only(
-                              topLeft: Radius.circular(16),
-                              bottomLeft: Radius.circular(16))
+                          topLeft: Radius.circular(16),
+                          bottomLeft: Radius.circular(16))
                           : const BorderRadius.only(
-                              topRight: Radius.circular(16),
-                              bottomRight: Radius.circular(16)))),
+                          topRight: Radius.circular(16),
+                          bottomRight: Radius.circular(16)))),
               Expanded(
                   child: CustomButton(
-                onPressed: () {
+                    onPressed: () {
                   cubit.launchUrl(sharedBook!.link ?? '');
                 },
-                text: 'Free Preview',
+                text: "Free Preview".tr(context),
                 textColor: Colors.white,
                 backgroundColor: AppColors.orange,
                 fontSize: 16,

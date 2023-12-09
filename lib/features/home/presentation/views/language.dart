@@ -3,7 +3,7 @@ import 'package:clean_arch_bookly_app/core/utils/functions/show_snake_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../features/splash/cubit/locale_cubit.dart';
+import '../../../splash/cubit/locale_cubit.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -28,7 +28,7 @@ class SettingsPage extends StatelessWidget {
                   items: ['ar', 'en'].map((String items) {
                     return DropdownMenuItem<String>(
                       value: items,
-                      child: Text(items),
+                      child: Text(items.tr(context)),
                     );
                   }).toList(),
                   onChanged: (String? newValue) {
@@ -37,7 +37,7 @@ class SettingsPage extends StatelessWidget {
                         context.read<LocaleCubit>().changeLanguage(newValue);
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
-                            showCustomSnakeBar('this is the default language'));
+                            showCustomSnakeBar("current language".tr(context)));
                       }
                     }
                   },

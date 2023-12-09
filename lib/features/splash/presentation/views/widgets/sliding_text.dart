@@ -1,4 +1,4 @@
-import 'package:clean_arch_bookly_app/core/utils/app_strings.dart';
+import 'package:clean_arch_bookly_app/core/translation_helper/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class SlidingText extends StatelessWidget {
@@ -12,7 +12,7 @@ class SlidingText extends StatelessWidget {
         builder: (context, _) {
           return SlideTransition(
             position: animation,
-            child: const Text(AppStrings.splashText),
+            child: Text("splashText".tr(context)),
           );
         });
   }

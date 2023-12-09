@@ -1,5 +1,16 @@
 {
-  "title": "تطبيق فلاتر الخاص بي",
-  "welcome_message": "مرحبًا بك في تطبيقي!",
-  "settings": "الاعدادات"
+  "settings": "الاعدادات",
+  "splashText": "اقرأ كتبًا مجانية",
+  "newestBooks": "أحدث الكتب",
+  "bookName": "كتاب الغابة",
+  "bookWriter": "روديارد كيبلنج",
+  "youMayLike": "قد تعجبك أيضًا",
+  "searchResult": "نتيجة البحث",
+  "search": "بحث",
+  "booksPaginationFailure": "فشل ترقيم الكتب",
+  "noRouteFound": "لم يتم العثور على الطريق",
+  "Free Preview": "معاينة مجانية",
+  "ar": "عربي",
+  "en": "إنجليزي",
+  "current language": "هذه هي اللغة الحالية"
 }

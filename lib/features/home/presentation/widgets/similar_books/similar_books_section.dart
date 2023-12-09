@@ -1,4 +1,4 @@
-import 'package:clean_arch_bookly_app/core/utils/app_strings.dart';
+import 'package:clean_arch_bookly_app/core/translation_helper/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/config/styles.dart';
@@ -15,7 +15,7 @@ class SimilarBooksSection extends StatelessWidget {
         Opacity(
           opacity: .6,
           child: Text(
-            AppStrings.youMayLike,
+            "youMayLike".tr(context),
             style: Styles.textStyle14
                 .copyWith(fontWeight: FontWeight.w600, color: Colors.white),
           ),

@@ -1,4 +1,4 @@
-import 'package:clean_arch_bookly_app/core/utils/app_strings.dart';
+import 'package:clean_arch_bookly_app/core/translation_helper/app_localizations.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -29,7 +29,7 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
       decoration: InputDecoration(
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
-        hintText: AppStrings.search,
+        hintText: "search".tr(context),
         suffixIcon: IconButton(
           onPressed: () {
             if (_isValid()) {

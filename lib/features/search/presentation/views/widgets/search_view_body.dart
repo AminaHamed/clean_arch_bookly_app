@@ -1,4 +1,4 @@
-import 'package:clean_arch_bookly_app/core/utils/app_strings.dart';
+import 'package:clean_arch_bookly_app/core/translation_helper/app_localizations.dart';
 import 'package:clean_arch_bookly_app/features/search/presentation/manager/search_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -39,11 +39,11 @@ class _SearchViewBodyState extends State<SearchViewBody> {
           const SizedBox(
             height: 16,
           ),
-          const Text(
-            AppStrings.searchResult,
+          Text(
+            "searchResult".tr(context),
             style: Styles.textStyle18,
           ),
-          Expanded(
+          const Expanded(
             child: SearchResultListViewBlocBuilder(),
           ),
           const SizedBox(

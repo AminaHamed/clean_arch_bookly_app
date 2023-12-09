@@ -1,4 +1,4 @@
-import 'package:clean_arch_bookly_app/core/utils/app_strings.dart';
+import 'package:clean_arch_bookly_app/core/translation_helper/app_localizations.dart';
 import 'package:clean_arch_bookly_app/core/widgets/space_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -14,27 +14,27 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return const CustomScrollView(
+    return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: CustomAppBar(),
             ),
             // FeaturedListView(),
-            FeaturedListViewBlocConsumer(),
-            VerticalSpace(4.5),
+            const FeaturedListViewBlocConsumer(),
+            const VerticalSpace(4.5),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Text(
-                AppStrings.newestBooks,
+                "newestBooks".tr(context),
                 style: Styles.textStyle18,
               ),
             ),
-            VerticalSpace(2),
+            const VerticalSpace(2),
             // BestSellerListView()
           ],
         )),
